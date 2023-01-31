@@ -14,3 +14,5 @@ verify .py files in mounted GCS buckets are executable via !python and %run comm
     
     1. Create a Composer Envirionemnt
     2. Download composer_pyspark_notebook.py and upload it to DAG folder
+    
+![image](https://user-images.githubusercontent.com/123537947/215648916-811a8331-b61a-45a5-8f5a-b61f3fd4fdd0.png)
