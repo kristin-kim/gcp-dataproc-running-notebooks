@@ -37,7 +37,7 @@ Running notebooks on Dataproc via Cloud Composer
     %run /path-1/sample.py
     ```
     
-## Objective
+# Objective
 This document is intended to walk through how to migrate and run a Notebook on a Dataproc cluster using Cloud Composer. This document should not be used as a design document. 
 
 ## Orchestrating End to End Notebook Execution workflow in Cloud Composer 
