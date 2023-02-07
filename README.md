@@ -1,10 +1,16 @@
 # running-notebooks
 Running notebooks on Dataproc via Cloud Composer
 
-    .
+## File Directory
     ├── composer_pyspark_notebook.py      # DAGs for Composer
     ├── composer_input                   
-    │   ├── init_pip_gscfuse.sh          
+    │   ├── initialization_scripts/ iniinit_pip_gscfuse.sh 
+    │   ├── jobs/wrapper_papermill.py
+    ├── notebooks/jupyter
+    │   ├── sample.py
+    │   ├── sample_notebook.ipynb
+    
+## File Details    
 * **wrapper.py**: runs a papermill execution of input notebook and writes the output file into the assgined location
 * **init_pip_gscfuse.sh**: this script completes following two tasks
   * Installs desired python packages 
@@ -22,7 +28,7 @@ Running notebooks on Dataproc via Cloud Composer
     ```
       delete_dataproc_cluster = dataproc_operator.DataprocClusterDeleteOperator()
     ```
-* *sample_notebook.ibynp*:
+* **sample_notebook.ibynp** :
   * verify if GCS buckets are mounted at pwd as a file system
   * verify Python files in mounted GCS buckets are executable via *!python* and *%run* command
     ```
@@ -30,6 +36,7 @@ Running notebooks on Dataproc via Cloud Composer
     !sudo python /path-1/sample.py
     %run /path-1/sample.py
     ```
+    
 ## Objective
 This document is intended to walk through how to migrate and run a Notebook on a Dataproc cluster using Cloud Composer. This document should not be used as a design document. 
 
@@ -41,9 +48,13 @@ b. Add DAGs file (ex. composer_pyspark_notebook.py) to the DAGs folder (found in
     DAG folder from Cloud Composer Console ![Screenshot 2023-02-07 at 9 04 12 AM](https://user-images.githubusercontent.com/123537947/217266654-f7a017fb-7470-4e04-9803-a72be6f652bd.png)
 
 c. Have all the files available in GCS bucket, except DAGs file which should go into your Composer DAGs folder
+
+b. Open Airflow UI to monitor DAG execution, Runs and logs
     
 ![image](https://user-images.githubusercontent.com/123537947/215648916-811a8331-b61a-45a5-8f5a-b61f3fd4fdd0.png)
 
+### Notes
+ 
 ## Best practices and recommendations
 * Execute Notebooks on Ephemeral clusters
 Orchestrate the Notebooks on ephemeral clusters. Refer to the Dataproc best practices documentation when setting up ephemeral clusters.
