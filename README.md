@@ -35,7 +35,7 @@ Orchestrating the workflow of running Jupyter Notebooks on a Dataproc cluser via
 * **sample.py** : sample python in *GCS bucket* which will be directly invoked by the notebook (this is possible because of [gcsfuse](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md) mounting GCS bucket as a file system)
 * **sample_notebook.ibynp** :
   * verify if GCS buckets are mounted at pwd as a file system
-  * verify Python files in mounted GCS buckets are executable via *!python* and *%run* command
+  * verify Python files in mounted GCS buckets are executable via **!python** and **%run** command
     ```
     !ls /path-1 
     !sudo python /path-1/sample.py
