@@ -1,5 +1,5 @@
 # gcp-dataproc-running-notebooks
-# Objective
+## Objective
 Orchestrating the workflow of running Jupyter Notebooks on a Dataproc cluser via PySpark job 
 
 ## File Directory Structure
@@ -68,11 +68,10 @@ e. Open Airflow UI to monitor DAG executions, Runs and logs
     
 ![image](https://user-images.githubusercontent.com/123537947/215648916-811a8331-b61a-45a5-8f5a-b61f3fd4fdd0.png)
 
-# II) Running a Jupyter notebook on a Dataproc cluster
+## II) Running a Jupyter notebook on a Dataproc cluster
 Refer to this [GCP tutorial](https://cloud.google.com/dataproc/docs/tutorials/jupyter-notebook) to 
 * install the Dataproc Jupyter and Anaconda components on a new cluster (utilize initialization script from this repository)
 * connect to the Jupyter notebook UI running on the cluster from your local browser using the [Dataproc Component Gateway](https://cloud.google.com/dataproc/docs/concepts/accessing/dataproc-gateways)
-<img width="689" alt="Screenshot 2023-02-07 at 11 34 18 AM" src="https://user-images.githubusercontent.com/123537947/217305830-f88a7297-1fc0-4a98-b16b-06c17c525c99.png">
 
 ## Closing Note
 If you're adapting this example for your own use consider the following:
@@ -80,9 +79,5 @@ If you're adapting this example for your own use consider the following:
 * Setting an appropriate input path within your environment (gcs, mounting point for gcsfuse, DAGs folder, etc)
 * Setting more appropriate configurations (DAGs, Dataproc cluster, init_script, etc)
 
-## Contributors 
-* Main Contributor: Kristin Kim (Google)
-* File Contributor: _____ (Google) - wrapper_papaermill.py
-* Reviewer: 
 
 
