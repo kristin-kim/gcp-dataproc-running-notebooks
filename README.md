@@ -57,7 +57,7 @@ DAG folder from Cloud Composer Console
 4. Have all the files available in GCS bucket, except DAGs file which should go into your Composer DAGs folder
 
 5. From Composer environment, create two Airflow variables (see composer_pyspark_notebook.py for the usage)
-<img width="725" alt="Screenshot 2023-02-07 at 11 29 09 AM" src="https://user-images.githubusercontent.com/123537947/217304416-2522c177-a3eb-420c-bcfa-7dc4e571d820.png">
+<img width="425" alt="Screenshot 2023-02-07 at 11 29 09 AM" src="https://user-images.githubusercontent.com/123537947/217304416-2522c177-a3eb-420c-bcfa-7dc4e571d820.png">
 
 https://airflow.apache.org/concepts.html#variables
 * gcp_project - Google Cloud Project to use for the Cloud Dataproc cluster.
