@@ -1,6 +1,6 @@
 # gcp-dataproc-running-notebooks
 ## Objective
-Orchestrator to run Jupyter Notebooks on a Dataproc cluser via Cloud Composer
+Orchestrator to run Notebooks on an Ephemeral Dataproc cluser via Cloud Composer
 
 ## File Directory Structure
     ├── composer_input                   
@@ -15,7 +15,7 @@ Orchestrator to run Jupyter Notebooks on a Dataproc cluser via Cloud Composer
 ## File Details    
 ### composer_input
 * **init_pip_gscfuse.sh**: this script completes following two tasks
-  * Installs desired python packages 
+  * Installs desired python packages
   * Installs [gcsfuse](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md) and mounts the desired bucket to the path
 * **wrapper_papermill.py**: runs a papermill execution of input notebook and writes the output file into the assgined location
 * **composer_pyspark_notebook.py**: orchestrates the workflow 
@@ -70,14 +70,15 @@ e. Open Airflow UI to monitor DAG executions, Runs and logs
 
 ## II) Running a Jupyter notebook on a Dataproc cluster
 Refer to this [GCP tutorial](https://cloud.google.com/dataproc/docs/tutorials/jupyter-notebook) to 
-* install the Dataproc Jupyter and Anaconda components on a new cluster (utilize initialization script from this repository)
-* connect to the Jupyter notebook UI running on the cluster from your local browser using the [Dataproc Component Gateway](https://cloud.google.com/dataproc/docs/concepts/accessing/dataproc-gateways)
+* Install the Dataproc Jupyter and Anaconda components on a new cluster (utilize initialization script from this repository)
+* Connect to the Jupyter notebook UI running on the cluster from your local browser using the [Dataproc Component Gateway](https://cloud.google.com/dataproc/docs/concepts/accessing/dataproc-gateways)
 
 ## Closing Note
 If you're adapting this example for your own use consider the following:
 
 * Setting an appropriate input path within your environment (gcs, mounting point for gcsfuse, DAGs folder, etc)
 * Setting more appropriate configurations (DAGs, Dataproc cluster, init_script, etc)
+* You can customize init_script to install addition python packages
 
 
 
